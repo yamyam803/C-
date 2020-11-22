@@ -1,1 +1,86 @@
 
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+
+namespace ConsoleApplication1
+{
+   public class Program
+    {
+      public  static void Main(string[] args)
+        {
+            Class1 qwe = new Class1();
+            Class2 awa = new Class2();
+            Class3 abj = new Class3();
+            Class4 bja = new Class4();
+            bool option = true;
+            while (option)
+            {
+                Console.WriteLine("1.Menghitung Bangun datar");
+                Console.WriteLine("2.Menghitung bangun ruang");
+                string pilihan = Console.ReadLine();
+
+                if (pilihan == "1")
+                {
+
+                    Console.WriteLine("1.Persegi panjang");
+                    Console.WriteLine("2.Lingkaran");
+                    string b = Console.ReadLine();
+                    if (b == "1")
+                    {
+                        Console.WriteLine("Masukan Panjang");
+                        double panjang = double.Parse (Console.ReadLine());
+                        Console.WriteLine("Masukan lebar");
+                         double lebar  = double.Parse  (Console.ReadLine());
+                         Console.WriteLine( abj.LuasPersegiPanjang(panjang, lebar));
+                    }
+                    if (b == "2")
+                    {
+                        Console.WriteLine("Masukan jari-jari");
+                        double r = double.Parse (Console.ReadLine());
+                        Console.WriteLine (bja.Lingkaran(r));
+                    }
+                   
+                }
+                else if (pilihan == "2")
+                {
+                    Console.WriteLine("1.Menghitung Balok");
+                    Console.WriteLine("2.Menghitung kubus");
+                    string f = Console.ReadLine();
+                    if (f == "1")
+                    {
+                        Console.WriteLine("Masukan panjang");
+                        double p = double.Parse (Console.ReadLine());
+                        Console.WriteLine("Masukan Lebar");
+                        double l = double.Parse (Console.ReadLine());
+                        Console.WriteLine("Masukan tinggi");
+                        double t = double.Parse (Console.ReadLine());
+                        Console.WriteLine(qwe.Balok(p,l,t));
+
+
+                    }
+                    if (f == "2")
+                    {
+                        Console.WriteLine("Masukan sisi");
+                        double sisi = double.Parse (Console.ReadLine());
+                        Console.Write(awa.Kubus(sisi));
+                    }
+                }
+                else
+                {
+                    Console.WriteLine("Pilihan anda tidak terdaftar pada menu ini");
+                }
+                Console.WriteLine("Pencet tombol \"q\"untuk keluar dari menu ini");
+                if (Console.ReadKey().Key == ConsoleKey.Q)
+                {
+                    option = false;
+                }
+                Console.Clear();
+            }
+          
+          
+
+        }
+    }
+}
